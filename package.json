@@ -1,0 +1,14 @@
+{
+    "name" : "node-red-contrib-sonos-test",
+    "version":  "0.0.1",  
+    "node-red" : {
+        "nodes": {
+			"sonos-test-config": "sonos-test-config.js",
+			"sonos-test-status": "sonos-test-status.js"
+		}
+    },
+  "dependencies": {
+    "@svrooij/sonos": "^1.1.4"
+  }
+
+}

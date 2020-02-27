@@ -1,0 +1,68 @@
+<script type="text/javascript">
+    RED.nodes.registerType('sonos-test-config',{
+        category: 'config',
+        defaults: {
+            name: {value: "", required:true},
+//            serialnum: {value: ""},
+//            ipaddress: {value: ""}
+        },
+        label: function() {
+            return this.name;
+        },
+//        oneditprepare: function () {
+//7
+//          try {
+//            $("#node-config-input-ipaddress").autocomplete( "destroy" );
+//          } catch(err) { }
+//          $("#node-config-lookup-ipaddress").click(function() {
+//              $("#node-config-lookup-ipaddress-icon").removeClass('fa-search');
+//              $("#node-config-lookup-ipaddress-icon").addClass('spinner');
+//              $("#node-config-lookup-ipaddress").addClass('disabled');
+//              $.getJSON('sonosSearch',function(data) {
+//                  $("#node-config-lookup-ipaddress-icon").addClass('fa-search');
+//                  $("#node-config-lookup-ipaddress-icon").removeClass('spinner');
+//                  $("#node-config-lookup-ipaddress").removeClass('disabled');
+//                  var dataArray = [];
+//                  $.each(data, function(i, element){
+//                      dataArray.push(element);
+//                  });
+//                  $("#node-config-input-ipaddress").autocomplete({
+//                      source:dataArray,
+//                      minLength:0,
+//                      close: function( event, ui ) {
+//                          $("#node-config-input-ipaddress").autocomplete( "destroy" );
+//                      }
+//                  }).autocomplete("search","");
+//              });
+//          });
+//
+//        },
+        oneditsave: function () {
+          var node = this;
+          node.language = $("#node-input-language").val();
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="sonos-test-config">
+    <div class="form-row">
+        <label for="node-config-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-config-input-name" placeholder="Sonos Config Master">
+    </div>
+<!--    <div class="form-row">
+        <label for="node-config-input-serialnum"><i class="fa fa-barcode" aria-hidden="true"></i> Serial Number</label>
+        <input type="text" id="node-config-input-serialnum" style="width:60%;" placeholder="B8-E9-37-xx-xx-xx:2">
+    </div> -->
+
+<!--    <div><p></p></div>
+
+    <div class="form-tips">Sonos devices are identified by their <strong>IP address</strong>. So make sure it stays the same. If you don't know the address hit the <i class="fa fa-search"></i> button and pick a device from the list.</div>
+
+    <div><p></p></div>
+
+    <div class="form-row">
+        <label for="node-config-input-ipaddress"><i class="fa fa-globe"></i> IP Address</label>
+        <input type="text" id="node-config-input-ipaddress" style="width:60%;" placeholder="192.168.xx.xx">
+		<a id="node-config-lookup-ipaddress" class="btn"><i id="node-config-lookup-ipaddress-icon" class="fa fa-search"></i></a>
+    </div> -->
+</script>
